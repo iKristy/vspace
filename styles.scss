@@ -94,14 +94,10 @@ body {
 
 
 .input {
-  color: rgba(192, 255, 192, 0.8);
+  color: rgba(192, 255, 192, 1);
   text-shadow:
 	  0 0 1px rgba(51, 255, 51, 0.4),
 	  0 0 2px rgba(255, 255, 255, 0.8);
-}
-
-.input::before {
-  content: "~ $ ";
 }
 
 
@@ -120,4 +116,24 @@ a::after {
 
 .highlight {
   color: white;
+}
+
+/* blinking cursor */
+#cursor {
+  display: flex;
+  align-items: center;
+}
+
+#blink {
+  background: rgba(128, 255, 128, 1);
+  margin-left: 1rem;
+  -webkit-animation: blink 0.8s infinite;
+  width: 0.8rem;
+  height: 1.5rem;
+}
+
+@-webkit-keyframes blink {
+  0% {background: #222}
+  50% {background: rgba(128, 255, 128, 1)}
+  100% {background: #222}
 }
